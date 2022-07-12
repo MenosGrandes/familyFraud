@@ -13,6 +13,9 @@ impl FamilyMember {
             name: "".to_string(),
         }
     }
+    pub fn get_name(self) -> String {
+        self.name
+    }
 }
 #[derive(Debug)]
 pub struct Family {
@@ -40,7 +43,10 @@ impl Family {
     pub fn set_points(&mut self, points: u32) {
         self.points += points;
     }
-    pub fn get_points(self) -> u32 {
+    pub fn get_points(&self) -> u32 {
         self.points
+    }
+    pub fn get_name(self) -> String {
+        self.name
     }
 }
