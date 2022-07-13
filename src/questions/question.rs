@@ -1,7 +1,7 @@
 #[derive(Debug)]
 pub struct Answer {
-    answer: String,
-    points: u8,
+    pub answer: String,
+    pub points: u8,
 }
 impl Answer {
     pub fn new(points: u8, answer: &str) -> Self {
