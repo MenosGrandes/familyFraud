@@ -1,4 +1,4 @@
-#[derive(Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Answer {
     pub answer: String,
     pub points: u8,
@@ -12,7 +12,7 @@ impl Answer {
     }
 }
 
-#[derive(Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Question {
     pub question: String,
     pub answers: Vec<Answer>,
