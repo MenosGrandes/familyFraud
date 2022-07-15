@@ -1,4 +1,4 @@
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, PartialEq)]
 pub struct Answer {
     pub answer: String,
     pub points: u8,
@@ -12,7 +12,7 @@ impl Answer {
     }
 }
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, PartialEq)]
 pub struct Question {
     pub question: String,
     pub answers: Vec<Answer>,
@@ -26,5 +26,22 @@ impl Question {
             answers,
             multiplayer,
         }
+    }
+    pub fn empty() -> Self {
+        Question {
+            question: "empty".to_string(),
+            answers: (vec![]),
+            multiplayer: (0),
+        }
+    }
+}
+
+#[derive(Serialize, Deserialize, Debug, PartialEq)]
+pub struct Questions {
+    pub questions: Vec<Question>,
+}
+impl Questions {
+    pub fn new(questions: Vec<Question>) -> Self {
+        Questions { questions }
     }
 }
